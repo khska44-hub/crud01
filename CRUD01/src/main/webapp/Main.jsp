@@ -23,9 +23,10 @@
 	<script>
 		$(function() {
 			$(".deleteP").click(function() {
-				confirm("削除しますか？");
-				let p_code = $(this).parent().parent().find(".p_code").html();
-				location.href = "DeleteAction.jsp?p_code="+p_code;
+				if(confirm("削除しますか？")) {
+					let p_code = $(this).parent().parent().find(".p_code").html();
+					location.href = "DeleteAction.jsp?p_code="+p_code;
+				}
 			});
 			$("#upload").click(function() {
 				location.href = "Upload.jsp";
